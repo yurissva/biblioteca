@@ -10,8 +10,7 @@ class BookController {
         const book = {
             title,
             author,
-            category,
-            availability: true
+            category    
         }
 
         await knex ("books").insert({ 
