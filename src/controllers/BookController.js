@@ -11,7 +11,7 @@ class BookController {
             title,
             author,
             category,
-            availability: false
+            availability: true
         }
 
         await knex ("books").insert({ 

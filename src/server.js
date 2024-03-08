@@ -6,7 +6,7 @@ const app = express();
 app.use(express.json());
 app.use(routes)
 
-let livros = [];
+/* let livros = [];
 let usuarios = [];
 
 // novo livro
@@ -120,7 +120,7 @@ app.get("/consulta", (req, res) => {
         result = livros.filter(livro => livro.categoria.includes(categoria)) 
     }
     return res.status(200).json(result)
-})
+}) */
 
 
 app.use((err, req, res, next) => {
