@@ -1,6 +1,6 @@
 const {Router} = require("express")
 const UserController = require("../controllers/UserController")
-const checkUserExists = require("../middleware/checkUserExists")
+const checkUserExists = require("../middlewares/checkUserExists")
 const userRoutes = Router()
 const userController = new UserController()
 

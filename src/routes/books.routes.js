@@ -1,6 +1,6 @@
 const {Router} = require("express")
 const BookController = require("../controllers/BookController")
-const checkBookExists = require("../middleware/checkBookExistis")
+const checkBookExists = require("../middlewares/checkBookExists")
 const bookRoutes = Router()
 const bookController = new BookController()
  
