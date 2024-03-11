@@ -5,7 +5,6 @@ exports.up = (knex) => {
       table.string("email").notNullable();
       table.string("phone").notNullable();
       table.string("password").notNullable()
-      table.boolean("isAdmin").defaultTo("false");
      })
   };
   
