@@ -9,7 +9,7 @@ module.exports = {
       host: 'localhost',
       user: 'root',
       password: '',
-      database: 'taskmanager_knex'
+      database: 'librarymanager'
     },
     migrations: {
       directory: path.resolve(
