@@ -21,7 +21,7 @@ class BookController {
             user_id: book.user_id
         })
 
-        return res.status(201).json("Tarefa criada com sucesso!")
+        return res.status(201).json("Livro criada com sucesso!")
     }
 
     async listBook(req, res) { 
@@ -59,7 +59,7 @@ class BookController {
     async deleteBook(req, res) {
         const {id} = req.params
         await knex("books").where({id}).delete({id})
-        return res.status(200).json("Registro deletado com sucesso")
+        return res.status(200).json("Livro deletado com sucesso")
 }
 
 }
