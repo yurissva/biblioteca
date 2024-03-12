@@ -3,12 +3,12 @@ const knex = require("../database/knex")
 class UserController {
 
     async createUser(req, res) {
-        const {name, email, phone, password} = req.body
+        const {name, email, phone, password, book_id} = req.body
 
 
         const isAdmin = false
 
-        await knex ("users").insert({name, email, phone, password, isAdmin})
+        await knex ("users").insert({name, email, phone, password, isAdmin, book_id})
 
         return res.status(201).json("Usuário cadastrado com sucesso!")
     }
