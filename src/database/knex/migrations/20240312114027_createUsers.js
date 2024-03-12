@@ -5,11 +5,11 @@ exports.up = (knex) => {
       table.string("name").notNullable();
       table.string("email").notNullable();
       table.string("phone").notNullable();
-      table.string("password").notNullable();
+    
       table.boolean("isAdmin").defaultTo(false); 
-      
-      table.integer("book_id").unsigned().index(); 
-      table.foreign("book_id").references("id").inTable("books");
+      table.timestamp('created_at').default(knex.fn.now());
+      table.timestamp('update_at').default(knex.fn.now())
+
     });
   };
   

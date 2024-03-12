@@ -4,10 +4,10 @@ exports.up = (knex) => {
       table.string("title").notNullable();
       table.string("author").notNullable();
       table.string("category").notNullable();
-      table.boolean("available").defaultTo("true");
+      table.boolean("available").default('true');
       table.timestamp('created_at').defaultTo(knex.fn.now());
       table.timestamp('update_at').defaultTo(knex.fn.now());
-      table.integer("user_id").unsigned().index().references("id").inTable("users")
+     
     })
   };
   

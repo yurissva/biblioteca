@@ -4,22 +4,19 @@ class BookController {
 
     async createBook(req, res) {
 
-        const {user_id} = req.params
+        
         const {title, author, category} = req.body
 
         const book = {
             title,
             author,
-            category,
-            user_id
-        
+            category
         }
 
         await knex ("books").insert({ 
             title: book.title,
             author: book.author,
-            category: book.category,
-            user_id: book.user_id
+            category: book.category
         
         })
 
@@ -46,16 +43,16 @@ class BookController {
 
         await knex("books").where({id}).update({title, author, category})
 
-        return res.status(200).json("Registro atualizado com sucesso!")
+        return res.status(200).json("Livro atualizado com sucesso!")
     }
     
     async updateBookStatus(req, res) {
         const {id} = req.params
         
-        await knex("books").where({id}).update({availability: true})
+        await knex("books").where({id}).update({available: true})
 
 
-        return res.status(200).json("Status atualizado com sucesso!!")
+        return res.status(200).json("Livro atualizado com sucesso!!")
     }
 
     async deleteBook(req, res) {
