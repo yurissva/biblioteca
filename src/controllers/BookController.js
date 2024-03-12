@@ -10,18 +10,20 @@ class BookController {
         const book = {
             title,
             author,
-            category    
+            category,
+            user_id
+        
         }
 
         await knex ("books").insert({ 
-            titulo: book.titulo,
+            title: book.title,
             author: book.author,
             category: book.category,
-            availability: book.availability,
             user_id: book.user_id
+        
         })
 
-        return res.status(201).json("Livro criada com sucesso!")
+        return res.status(201).json("Livro criado com sucesso!")
     }
 
     async listBook(req, res) { 

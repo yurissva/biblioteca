@@ -6,6 +6,9 @@ exports.up = (knex) => {
       table.string("phone").notNullable();
       table.string("password").notNullable()
       table.boolean("isAdmin").defaultTo("false");
+      table.increment("book_id").index();
+
+      table.integrer("book_id").unsigned().index().references("id").inTable("book")
      })
   };
   
